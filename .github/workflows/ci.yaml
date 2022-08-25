@@ -25,3 +25,6 @@ jobs:
         target: builder
         cache-from: type=gha
         cache-to: type=gha,mode=max
+        
+    - name: foo
+      run: docker run geoheil/containerfun-cache:latest cat asdf.text
