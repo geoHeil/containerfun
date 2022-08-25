@@ -37,5 +37,5 @@ jobs:
     - name: foo
       run: docker run ghcr.io/geoheil/containerfun-cache:latest ls /
 
-    - name: foo
-      run: docker run ghcr.io/geoheil/containerfun-cache:latest cat /asdf.text
+    - name: fook
+      run: docker run ghcr.io/geoheil/containerfun-cache:latest cat /asdf.txt
