@@ -28,7 +28,8 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: True
-        tags: geoheil/containerfun-cache:latest
+        #tags: geoheil/containerfun-cache:latest
+        tags: geoheil/containerfun:latest
         target: builder
         cache-from: type=gha
         cache-to: type=gha,mode=max
