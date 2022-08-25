@@ -34,6 +34,8 @@ jobs:
         cache-from: type=gha
         cache-to: type=gha,mode=max
         
+    - name: images
+      run: docker images
     - name: fooasdf
       run: docker buildx build --cache-from type=gha --target app --tag ghcr.io/geoheil/containerfun-app:latest .
       
