@@ -35,7 +35,13 @@ jobs:
         cache-to: type=gha,mode=max
         
     - name: fooasdf
-      run: docker buildx build --cache-from type=gha --target app --tag ghcr.io/geoheil/containerfun-app:latest --build-arg BUILDKIT_INLINE_CACHE=1 .
+      #run: docker buildx build --cache-from type=gha --target app --tag ghcr.io/geoheil/containerfun-app:latest --build-arg BUILDKIT_INLINE_CACHE=1 .
+      uses: docker/build-push-action@v3
+      with:
+        push: True
+        tags: ghcr.io/geoheil/containerfun-app:latest
+        target: app
+        cache-from: ghcr.io/geoheil/containerfun-cache:latest
       
     - name: images
       run: docker images
