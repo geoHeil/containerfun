@@ -35,4 +35,7 @@ jobs:
         cache-to: type=gha,mode=max
         
     - name: foo
+      run: docker run ghcr.io/geoheil/containerfun-cache:latest ls /
+
+    - name: foo
       run: docker run ghcr.io/geoheil/containerfun-cache:latest cat /asdf.text
