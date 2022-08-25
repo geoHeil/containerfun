@@ -51,3 +51,6 @@ jobs:
 
     - name: fook
       run: docker run ghcr.io/geoheil/containerfun-asdf:latest cat /asdf.txt
+      
+    - name: echostuff
+      run: echo foo
