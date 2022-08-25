@@ -1,5 +1,5 @@
 FROM ubuntu:latest as builder
-RUN ech hello >> asdf.txt
+RUN echo hello >> asdf.txt
 
 
 FROM builder as app
