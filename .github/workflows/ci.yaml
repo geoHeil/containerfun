@@ -1,0 +1,27 @@
+name: ci
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Set up Docker Buildx
+      id: buildx
+      with:
+        install: true
+      uses: docker/setup-buildx-action@v2
+
+    - name: cache base builder
+      uses: docker/build-push-action@v3
+      with:
+        push: False
+        tags: geoheil/containerfun-cache:latest
+        target: builder
+        cache-from: type=gha
+        cache-to: type=gha,mode=max
