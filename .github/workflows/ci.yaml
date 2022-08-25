@@ -35,19 +35,19 @@ jobs:
         cache-to: type=gha,mode=max
         
     - name: fooasdf
-      #run: docker buildx build --cache-from type=gha --target app --tag ghcr.io/geoheil/containerfun-app:latest --build-arg BUILDKIT_INLINE_CACHE=1 .
-      uses: docker/build-push-action@v3
-      with:
-        push: True
-        tags: ghcr.io/geoheil/containerfun-app:latest
-        target: app
-        cache-from: ghcr.io/geoheil/containerfun-cache:latest
+      run: docker buildx build --cache-from type=gha --target app --load -tag ghcr.io/geoheil/containerfun-asdf:latest --build-arg BUILDKIT_INLINE_CACHE=1 .
+      #uses: docker/build-push-action@v3
+      #with:
+      #  push: True
+      #  tags: ghcr.io/geoheil/containerfun-app:latest
+      #  target: app
+      #  cache-from: ghcr.io/geoheil/containerfun-cache:latest
       
     - name: images
       run: docker images
       
     - name: foo
-      run: docker run ghcr.io/geoheil/containerfun-app:latest ls /
+      run: docker run ghcr.io/geoheil/containerfun-asdf:latest ls /
 
     - name: fook
-      run: docker run ghcr.io/geoheil/containerfun-app:latest cat /asdf.txt
+      run: docker run ghcr.io/geoheil/containerfun-asdf:latest cat /asdf.txt
