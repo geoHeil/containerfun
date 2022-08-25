@@ -1,4 +1,4 @@
-FROM ubuntu-latest as builder
+FROM ubuntu:latest as builder
 RUN ech hello > asdf.txt
 
 
